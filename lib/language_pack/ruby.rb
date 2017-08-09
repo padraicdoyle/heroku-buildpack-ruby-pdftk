@@ -176,8 +176,8 @@ private
       end
     end
 
-    @ruby_versions.push "ruby-2.3.1"
-    
+    @ruby_versions << "ruby-2.3.1"
+
     @ruby_versions
   end
 
