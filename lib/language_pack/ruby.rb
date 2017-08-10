@@ -171,10 +171,13 @@ private
 
     Dir.mktmpdir("ruby_versions-") do |tmpdir|
       Dir.chdir(tmpdir) do
-        run("curl -O https://s3.amazonaws.com/heroku-pdftk-vendor/ruby_versions.yml")
+        run("curl -O #{VENDOR_URL}/ruby_versions.yml")
+        https://s3.amazonaws.com/heroku-pdftk-vendor/ruby_versions.yml
         @ruby_versions = YAML::load_file("ruby_versions.yml")
       end
     end
+
+    @ruby_versions << "ruby-2.3.1"
 
     @ruby_versions
   end
